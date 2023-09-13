@@ -38,8 +38,8 @@ class KpiComponent():
     
     def create_altair_chart(self):
         ch = alt.Chart(self.subset).mark_line().encode(
-            alt.X('date', axis=alt.Axis(title='Date')),
-            alt.Y('actual_value',axis=alt.Axis(title='')),
+            alt.X('date'),
+            alt.Y('actual_value'),
         ) 
         return ch
         
