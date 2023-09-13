@@ -58,7 +58,7 @@ with c_orders:
     ordersc = KpiComponent(df_shopify, "Orders", np.mean, dto=DTO, dfrom=DFROM)
     
 
-c_space1,c_margin, c_conv_rate, c_space = st.columns((1,2,2,1))
+c_margin, c_conv_rate = st.columns(2)
 with c_margin:
     customersc = KpiComponent(df_shopify, "New Customers", np.sum, dto=DTO, dfrom=DFROM)
 with c_conv_rate:
