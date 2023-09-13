@@ -1,0 +1,7 @@
+streamlit
+pandas
+git+https://github.com/keboola/sapi-python-client.git
+numpy
+datetime
+altair
+jira
