@@ -1,7 +1,7 @@
 html_code = '''
     <div style="display: flex; justify-content: left; margin:5% 0">
         <div style="width: 50%;text-align:left">
-            <strong>KPIs:</strong>
+            <strong>Key Performance Indicators Description:</strong>
             <p></p>
             <p>Turnover: Total turnover of paid orders in selected period.</p>
             <p>Orders: Count of orders in selected period.</p>
