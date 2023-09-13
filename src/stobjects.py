@@ -33,7 +33,7 @@ class KpiComponent():
             st.write()
             self.last_planned = np.round(self.subset["plan_value"].tail(1).values[0], decimals=self.decimals)
         except IndexError:
-            st.error("The date range selected does not fit within the data")
+            st.error("The date range selected does not fit within the data.")
             st.stop()
     
     def create_altair_chart(self):
@@ -61,14 +61,9 @@ class KpiComponent():
         # jira = self.form.checkbox('Jira')
         with self.form.expander("Notification message"):
             notif = st.text_input(label="Comment", disabled=False)
-            #slacknotif = st.text_input(label="Insert Slack Comment", disabled=False)
-            #jirasummary = st.text_input(label="Insert Jira Summary", disabled=False)
 
         send_notif = self.form.form_submit_button("Send Notification")
         if send_notif:
             if slack:
                 value = ntf.send_slack_notification(self.client, self.base_msg + notif)
                 st.write(f"Slack Notification Status: Table {value}")
-            # if jira:
-            #     value = ntf.create_new_jira_issue(jira_cli, ntf.IssueType.TASK, self.base_msg + notif)
-            #     st.write(f"Jira notification status: {value}")
