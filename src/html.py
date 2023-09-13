@@ -1,5 +1,5 @@
 html_code = '''
-    <div style="display: flex; justify-content: center; margin:5% 0">
+    <div style="display: flex; justify-content: left; margin:5% 0">
         <div style="width: 50%;text-align:left">
             <strong>KPIs:</strong>
             <p></p>
