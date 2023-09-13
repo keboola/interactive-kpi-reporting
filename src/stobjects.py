@@ -3,7 +3,6 @@ import streamlit as st
 import numpy as np
 import altair as alt
 import src.notifications as ntf
-#from src.settings import jira_cli
 from src.settings import keboola_client
 from src.settings import DECIMALS
 
@@ -61,7 +60,6 @@ class KpiComponent():
         ch = self.create_altair_chart()
         self.form.altair_chart(ch, use_container_width=True)
         slack = self.form.checkbox('Slack')
-        # jira = self.form.checkbox('Jira')
         with self.form.expander("Notification message"):
             notif = st.text_input(label="Comment", disabled=False)
 

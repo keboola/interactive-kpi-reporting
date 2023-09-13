@@ -1,8 +1,6 @@
 #import keboola_api as kb
 from kbcstorage.client import Client
 import pandas as pd
-from jira import JIRA
-from jira.resources import Issue
 from enum import Enum
 
 def create_or_update(keboola_URL,

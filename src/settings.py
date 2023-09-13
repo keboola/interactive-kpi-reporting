@@ -1,5 +1,4 @@
 import streamlit as st
-from src.notifications import init_jira_client
 from kbcstorage.client import Client
 
 DECIMALS = 1
