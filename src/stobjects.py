@@ -38,16 +38,16 @@ class KpiComponent():
     
     def create_altair_chart(self):
         ch = alt.Chart(self.subset).mark_line().encode(
-            alt.X('date'),
-            alt.Y('actual_value'),
+            alt.X('date', axis=alt.Axis(title='Date')),
+            alt.Y('actual_value',axis=alt.Axis(title='')),
         ) 
         return ch
         
     
     def set_up_message(self):
         base_msg = f"KPI metric: {self.kpi_name} (from {self.dfrom} to {self.dto})."
-        base_msg = base_msg + f" Real value: {self.actual}, planned value: {self.last_planned}. "
-        self.base_msg = base_msg + "CEO comment: "
+        base_msg = base_msg + f" Real value: {self.actual}, Planned value: {self.last_planned}. "
+        self.base_msg = base_msg + "Comment: "
     
     def fill_form(self):
         self.select_kpi()
@@ -60,15 +60,15 @@ class KpiComponent():
         slack = self.form.checkbox('Slack')
         # jira = self.form.checkbox('Jira')
         with self.form.expander("Notification message"):
-            notif = st.text_input(label="CEO comment", disabled=False)
+            notif = st.text_input(label="Comment", disabled=False)
             #slacknotif = st.text_input(label="Insert Slack Comment", disabled=False)
             #jirasummary = st.text_input(label="Insert Jira Summary", disabled=False)
 
-        send_notif = self.form.form_submit_button("Send notifications")
+        send_notif = self.form.form_submit_button("Send Notification")
         if send_notif:
             if slack:
                 value = ntf.send_slack_notification(self.client, self.base_msg + notif)
-                st.write(f"Slack notification status: table {value}")
+                st.write(f"Slack Notification Status: Table {value}")
             # if jira:
             #     value = ntf.create_new_jira_issue(jira_cli, ntf.IssueType.TASK, self.base_msg + notif)
             #     st.write(f"Jira notification status: {value}")
