@@ -51,13 +51,11 @@ DFROM = DFROM.isoformat()
 DTO = DTO.isoformat()
 
 st.markdown(title["statistics"],unsafe_allow_html=True)
-c_sales, c_orders,c_avg_order = st.columns(3)
+c_sales, c_orders,c_avg_order = st.columns(2)
 with c_sales:
     salesc = KpiComponent(df_shopify, "Turnover", np.sum, dto=DTO, dfrom=DFROM)
 with c_orders:
     ordersc = KpiComponent(df_shopify, "Orders", np.mean, dto=DTO, dfrom=DFROM)
-with c_avg_order:
-    customersc = KpiComponent(df_shopify, "Average Order Value", np.sum, dto=DTO, dfrom=DFROM)
     
 
 c_space1,c_margin, c_conv_rate, c_space = st.columns((1,2,2,1))
