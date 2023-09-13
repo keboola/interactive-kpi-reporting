@@ -60,10 +60,10 @@ with c_avg_order:
     customersc = KpiComponent(df_shopify, "average order value", np.sum, dto=DTO, dfrom=DFROM)
     
 
-c_new_customers,c_margin, c_conv_rate = st.columns(3)
-with c_new_customers:
-    customersc = KpiComponent(df_shopify, "new customers", np.sum, dto=DTO, dfrom=DFROM)
+c_space1,c_margin, c_conv_rate, c_space = st.columns((1,2,2,1))
 with c_margin:
+    customersc = KpiComponent(df_shopify, "new customers", np.sum, dto=DTO, dfrom=DFROM)
+with c_conv_rate:
     customersc = KpiComponent(df_shopify, "total customers", np.sum, dto=DTO, dfrom=DFROM)
 
 #with c_conv_rate:
