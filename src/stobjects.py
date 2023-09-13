@@ -31,7 +31,10 @@ class KpiComponent():
                 self.subset["actual_value"]), decimals=self.decimals
                 )
             st.write()
-            self.last_planned = np.round(self.subset["plan_value"].tail(1).values[0], decimals=self.decimals)
+            self.last_planned = np.round(self.agg_function(
+                self.subset["plan_value"]), decimals=self.decimals
+                )
+            #self.last_planned = np.round(self.subset["plan_value"].tail(1).values[0], decimals=self.decimals)
         except IndexError:
             st.error("The date range selected does not fit within the data.")
             st.stop()
