@@ -53,18 +53,18 @@ DTO = DTO.isoformat()
 st.markdown(title["statistics"],unsafe_allow_html=True)
 c_sales, c_orders,c_avg_order = st.columns(3)
 with c_sales:
-    salesc = KpiComponent(df_shopify, "Turnover", np.sum, dto=DTO, dfrom=DFROM)
+    salesc = KpiComponent(df_shopify, "sales", np.sum, dto=DTO, dfrom=DFROM)
 with c_orders:
-    ordersc = KpiComponent(df_shopify, "Orders", np.mean, dto=DTO, dfrom=DFROM)
+    ordersc = KpiComponent(df_shopify, "orders", np.mean, dto=DTO, dfrom=DFROM)
 with c_avg_order:
-    customersc = KpiComponent(df_shopify, "Average Order Value", np.sum, dto=DTO, dfrom=DFROM)
+    customersc = KpiComponent(df_shopify, "average order value", np.sum, dto=DTO, dfrom=DFROM)
     
 
 c_space1,c_margin, c_conv_rate, c_space = st.columns((1,2,2,1))
 with c_margin:
-    customersc = KpiComponent(df_shopify, "New Customers", np.sum, dto=DTO, dfrom=DFROM)
+    customersc = KpiComponent(df_shopify, "new customers", np.sum, dto=DTO, dfrom=DFROM)
 with c_conv_rate:
-    customersc = KpiComponent(df_shopify, "Total Customers", np.sum, dto=DTO, dfrom=DFROM)
+    customersc = KpiComponent(df_shopify, "total customers", np.sum, dto=DTO, dfrom=DFROM)
 
 st.write(html_code, unsafe_allow_html=True)
 st.markdown(f"""
