@@ -51,7 +51,7 @@ DFROM = DFROM.isoformat()
 DTO = DTO.isoformat()
 
 st.markdown(title["statistics"],unsafe_allow_html=True)
-c_sales, c_orders,c_avg_order = st.columns(2)
+c_sales, c_orders = st.columns(2)
 with c_sales:
     salesc = KpiComponent(df_shopify, "Turnover", np.sum, dto=DTO, dfrom=DFROM)
 with c_orders:
