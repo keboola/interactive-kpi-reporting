@@ -53,7 +53,7 @@ class KpiComponent():
         self.select_kpi()
         self.set_up_message()
         self.form = st.form(self.kpi_name)
-        self.form.metric(self.kpi_name, f"{self.actual} (curr.)/ {self.last_planned} (plan)", np.round(
+        self.form.metric(self.kpi_name, f"{self.actual} (Real)/ {self.last_planned} (Plan)", np.round(
             self.actual - self.last_planned, decimals=DECIMALS))
         ch = self.create_altair_chart()
         self.form.altair_chart(ch, use_container_width=True)
