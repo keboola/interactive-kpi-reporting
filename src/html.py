@@ -1,11 +1,7 @@
 html_code = '''
     <div style="display: flex; justify-content: center; margin:5% 0">
         <div style="width: 50%;text-align:left">
-            <strong>Filters:</strong>
-            <p></p>
-        </div>
-        <div style="width: 50%;text-align:left">
-            <strong>Metrics:</strong>
+            <strong>KPIs:</strong>
             <p></p>
             <p>Sales: Total turnover of paid orders in selected period.</p>
             <p>Orders: Count of orders in selected period.</p>
@@ -27,6 +23,6 @@ css_style = """
 </style>
 """
 title= {
-    "filters":'<p class="subheader">Filters</p>',
-    "statistics":'<p class="subheader">Statistics</p>',
+    "filters":'<p class="subheader">Time Period</p>',
+    "statistics":'<p class="subheader">Key Performance Indicators</p>',
 }

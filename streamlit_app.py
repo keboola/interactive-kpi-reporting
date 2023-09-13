@@ -66,9 +66,6 @@ with c_margin:
 with c_conv_rate:
     customersc = KpiComponent(df_shopify, "total customers", np.sum, dto=DTO, dfrom=DFROM)
 
-#with c_conv_rate:
-#    customersc = KpiComponent(df, "conversion_rate", np.sum, dto=DTO, dfrom=DFROM)
-
 st.write(html_code, unsafe_allow_html=True)
 st.markdown(f"""
     <div style="display: flex; justify-content: flex-end;">

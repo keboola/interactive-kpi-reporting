@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 24 18:03:51 2023
-
-@author: ondrejsvoboda
-"""
-
 import pandas as pd
 import streamlit as st
 import numpy as np
