@@ -65,7 +65,7 @@ def send_slack_notification(client:Client, message:str):
     value = create_or_update(client.root_url,
                          client._token,
                          "slack",
-                         "in.c-empower_kpis",
+                         "out.c-kpi-report",
                          "test.csv",
                          None,
                          is_incremental=False, 
@@ -76,29 +76,4 @@ def send_slack_notification(client:Client, message:str):
                          without_headers=False)
     return value
 
-
-class IssueType(Enum):
-    EPIC = "Epic"
-    TASK = "Task"
-
-def init_jira_client(server: str, user_email: str, api_token: str) -> JIRA:
-    try:
-        jira_options = {'server': server}
-        return JIRA(options=jira_options, basic_auth=(user_email, api_token))
-    except Exception as jira_exc:
-        print(jira_exc)
-        print("Failed to authenticate client, please revalidate your email and token")        
-
-def create_new_jira_issue(jira_client: JIRA, issue_type: IssueType, summary: str) -> Issue:
-
-    try:
-        issue_num = jira_client.create_issue(project='STR',
-                                       #     customfield_10011=epic_name,
-                                        summary=summary,
-                                        issuetype={'name': issue_type.value}
-                                       )
-        return f'https://keboola.atlassian.net/jira/software/projects/STR/boards/210?selectedIssue={issue_num} has been created.'
-    except Exception as jira_exc:
-        print(f"{jira_exc}")
-        return(f"Failed to create new {issue_type.value}. Check log for details")
         
