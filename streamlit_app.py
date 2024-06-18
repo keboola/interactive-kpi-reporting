@@ -8,7 +8,7 @@ from src.stobjects import KpiComponent
 from src.settings import SHOPIFY_TABLE_PATH
 from src.html import html_code,css_style,title
 
-#st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 st.markdown(css_style, unsafe_allow_html=True)
 
 logo_image = os.path.abspath("/home/appuser/app/static/keboola.png")
